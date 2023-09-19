@@ -9,19 +9,19 @@ import java.time.LocalDate;
 
 public class OrderStep2Page extends Driver {
     //Поле выбора дат "Когда привезти самокат" во втором шаге бронирования
-    private By inputDateDelivery = By.xpath(".//input[@placeholder = '* Когда привезти самокат']");
+    private final By inputDateDelivery = By.xpath(".//input[@placeholder = '* Когда привезти самокат']");
     //Открывшейся календарь по клику поля "Когда привезти самокат" во втором шаге бронирования
-    private By blockCalander = By.xpath(".//div[@class = 'react-datepicker']");
+    private final By blockCalander = By.xpath(".//div[@class = 'react-datepicker']");
     //Поле "Когда привезти самокат" во втором шаге бронирования
-    private By selectTimeRental = By.xpath(".//div[text() = '* Срок аренды']");
+    private final By selectTimeRental = By.xpath(".//div[text() = '* Срок аренды']");
     //Выпадающий список срока аренды самоката в поле "Когда привезти самокат" во втором шаге бронирования
-    private By selectRentalPeriod2Days = By.xpath(".//div[text() = 'двое суток']");
+    private final By selectRentalPeriod2Days = By.xpath(".//div[text() = 'двое суток']");
     //Поле "Комментарий для курьера" во втором шаге бронирования
-    private By inputCommentCourier = By.xpath(".//input[@placeholder = 'Комментарий для курьера']");
+    private final By inputCommentCourier = By.xpath(".//input[@placeholder = 'Комментарий для курьера']");
     //Кнопка "Заказать" во втором шаге бронирования
-    private By buttonOrderRental = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text () = 'Заказать']");
+    private final By buttonOrderRental = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text () = 'Заказать']");
     //Кнопка "Да" в открывшемся модальном окне ,после нажатия на кнопку "Заказать" во втором шаге бронирования
-    private By buttonEndingOrder = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text() = 'Да']");
+    private final By buttonEndingOrder = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text() = 'Да']");
 
     public void setDateDelivery(int date) {
         LocalDate actualDay = LocalDate.now();

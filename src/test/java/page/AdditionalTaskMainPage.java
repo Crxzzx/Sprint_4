@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 
 public class AdditionalTaskMainPage extends Driver {
-    private By buttonSamokat = By.xpath(".//img[@alt = 'Scooter']");
-    private By buttonYandex = By.xpath(".//img[@alt = 'Yandex']");
+    private final By buttonSamokat = By.xpath(".//img[@alt = 'Scooter']");
+    private final By buttonYandex = By.xpath(".//img[@alt = 'Yandex']");
 
     public String clickButtonService(int buttonLogo) {
         if (buttonLogo == 1) {

@@ -9,28 +9,28 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OrderStep1Page extends Driver {
     //Кнопка "Заказать" в заголовке сайта
-    private By orderHeader = By.xpath(".//button[contains(@class , 'Button_Button')]");
+    private final By orderHeader = By.xpath(".//button[contains(@class , 'Button_Button')]");
     //Блок "Road map" в футере сайта
-    private By blockFooter = By.xpath(".//div[contains(@class , 'Home_ThirdPart')]");
+    private final By blockFooter = By.xpath(".//div[contains(@class , 'Home_ThirdPart')]");
     //Кнопка "Заказать" в футере сайта
-    private By buttonFooter = By.xpath(".//div[contains(@class , 'Home_FinishButton')]/button[text() = 'Заказать']");
+    private final By buttonFooter = By.xpath(".//div[contains(@class , 'Home_FinishButton')]/button[text() = 'Заказать']");
     //Поле ввода "Имя" пользователя в первом шаге бронирования
-    private By inputNameForm = By.xpath(".//input[@placeholder = '* Имя']");
+    private final By inputNameForm = By.xpath(".//input[@placeholder = '* Имя']");
     //Поле ввода "Фамилия" пользователя в первом шаге бронирования
-    private By inputLastNameForm = By.xpath(".//input[@placeholder = '* Фамилия']");
+    private final By inputLastNameForm = By.xpath(".//input[@placeholder = '* Фамилия']");
     //Поле ввода "Адрес:куда доставить" в первом шаге бронирования
-    private By inputAddressForm = By.xpath(".//input[@placeholder = '* Адрес: куда привезти заказ']");
+    private final By inputAddressForm = By.xpath(".//input[@placeholder = '* Адрес: куда привезти заказ']");
     //Поле "Станция метро" в первом шаге бронирования
-    private By inputStationForm = By.xpath(".//input[@placeholder = '* Станция метро']");
+    private final By inputStationForm = By.xpath(".//input[@placeholder = '* Станция метро']");
     //Выпадающий список станций метро в первом шаге бронирования
-    private By listStationMetro = By.className("select-search__row");
+    private final By listStationMetro = By.className("select-search__row");
     //Поле ввода "Телефон:на него позвонить курьер" в первом шаге бронирования
-    private By inputNumberPhoneForm = By.xpath(".//input[@placeholder = '* Телефон: на него позвонит курьер']");
+    private final By inputNumberPhoneForm = By.xpath(".//input[@placeholder = '* Телефон: на него позвонит курьер']");
     //Кнопка "Далее" в первом шаге бронирования
-    private By buttonNextForm = By.xpath(".//div[contains(@class , 'Order_NextButton')]/button[text() = 'Далее']");
+    private final By buttonNextForm = By.xpath(".//div[contains(@class , 'Order_NextButton')]/button[text() = 'Далее']");
     //Элемент шапки сайта на главной странице
-    private By headerPage = By.xpath(".//div[contains(@class , 'Header_Header')]");
-    private By cookie = By.xpath(".//button[contains(@class , 'App_Cookie') and (text() = 'да все привыкли')]");
+    private final By headerPage = By.xpath(".//div[contains(@class , 'Header_Header')]");
+    private final By cookie = By.xpath(".//button[contains(@class , 'App_Cookie') and (text() = 'да все привыкли')]");
 
     public void clickButtonOrder(int button) {
         new WebDriverWait(driver, 3)

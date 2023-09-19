@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class AccordionPage extends Driver {
-    private By headerPages = By.xpath(".//div[contains(@class , 'Header_Header')]");
-    private By faqBlock = By.xpath(".//div[contains(@class , 'Home_FourPart')]");
+    private final By headerPages = By.xpath(".//div[contains(@class , 'Header_Header')]");
+    private final By faqBlock = By.xpath(".//div[contains(@class , 'Home_FourPart')]");
 
     public String getElementsAccordions(int number) {
         List<WebElement> elementOfAccordions = driver.findElements(By.xpath(".//div[contains(@class , 'accordion')]/div[contains(@class ,'accordion__panel')]/p"));

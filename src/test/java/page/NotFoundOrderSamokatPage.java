@@ -7,15 +7,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NotFoundOrderSamokatPage extends Driver {
     //Заголовок на главной странице
-    private By headerService = By.xpath(".//div[contains(@class , 'Header_Header')]");
+    private final By headerService = By.xpath(".//div[contains(@class , 'Header_Header')]");
     //Кнопка "Статус заказа" на главной странице
-    private By buttonStatus = By.xpath(".//button[contains(@class , 'Header_Link') and (text() = 'Статус заказа')]");
+    private final By buttonStatus = By.xpath(".//button[contains(@class , 'Header_Link') and (text() = 'Статус заказа')]");
     //Поле ввода "Введите номер заказа" на глвной странице
-    private By inputNumberOrder = By.xpath(".//input[@placeholder = 'Введите номер заказа']");
+    private final By inputNumberOrder = By.xpath(".//input[@placeholder = 'Введите номер заказа']");
     //Кнопка "Go!" после нажатия на кнопку "Статус заказа" на главной странице
-    private By buttonGo = By.xpath(".//button[contains(@class , 'Button_Button') and (text() = 'Go!')]");
+    private final By buttonGo = By.xpath(".//button[contains(@class , 'Button_Button') and (text() = 'Go!')]");
     //Статус заказа ,на странице статуса заказа
-    private By notFoundOrderStatus = By.xpath(".//img[@alt = 'Not found']");
+    private final By notFoundOrderStatus = By.xpath(".//img[@alt = 'Not found']");
 
     public void clickButtonStatus() {
         new WebDriverWait(driver, 3)
