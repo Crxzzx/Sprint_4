@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
-public class AdditionalTaskMainPage extends Driver {
+public class UrlLogoMainPage extends Driver {
     private final By buttonSamokat = By.xpath(".//img[@alt = 'Scooter']");
     private final By buttonYandex = By.xpath(".//img[@alt = 'Yandex']");
 

@@ -4,16 +4,16 @@ import core.Annotation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import page.AdditionalTaskMainPage;
+import page.UrlLogoMainPage;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class AdditionalButtonTest extends Annotation {
+public class CheckLogoTransitionTest extends Annotation {
     private final int selectButton;
     private final String urlService;
 
-    public AdditionalButtonTest(int selectButton, String urlService) {
+    public CheckLogoTransitionTest(int selectButton, String urlService) {
         this.selectButton = selectButton;
         this.urlService = urlService;
     }
@@ -28,7 +28,7 @@ public class AdditionalButtonTest extends Annotation {
 
     @Test
     public void comparisonUrlAfterClickLogo() {
-        AdditionalTaskMainPage urlLogo = new AdditionalTaskMainPage();
-        assertEquals("Url неверный", urlService, urlLogo.clickButtonService(selectButton));
+        UrlLogoMainPage urlLogoMainPage = new UrlLogoMainPage();
+        assertEquals("Url неверный", urlService, urlLogoMainPage.clickButtonService(selectButton));
     }
 }

@@ -23,7 +23,7 @@ public class AccordionPage extends Driver {
         return elementOfAccordions.get(number);
     }
 
-    public String getListQuestionsAccordions(int number) {
+    public String checkElementAccordion(int number) {
         List<WebElement> getHeadersButtonAccordion = driver.findElements(By.xpath(".//div[contains(@class , 'accordion')]//div[contains(@class , 'accordion__button')]"));
         return getHeadersButtonAccordion.get(number).getAttribute("innerHTML");
     }

@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class NotFoundOrderSamokatPage extends Driver {
+public class StatusOrderPage extends Driver {
     //Заголовок на главной странице
     private final By headerService = By.xpath(".//div[contains(@class , 'Header_Header')]");
     //Кнопка "Статус заказа" на главной странице
@@ -23,10 +23,10 @@ public class NotFoundOrderSamokatPage extends Driver {
         driver.findElement(buttonStatus).click();
     }
 
-    public void setInputNumberOrder() {
+    public void setInputNumberOrder(String numberOrder) {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(inputNumberOrder));
-        driver.findElement(inputNumberOrder).sendKeys("3123123");
+        driver.findElement(inputNumberOrder).sendKeys(numberOrder);
     }
 
     public void clickButtonGo() {
@@ -35,13 +35,13 @@ public class NotFoundOrderSamokatPage extends Driver {
 
     public boolean getStatusOrder() {
         new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(headerService));
+                .until(ExpectedConditions.visibilityOfElementLocated(notFoundOrderStatus));
         return driver.findElement(notFoundOrderStatus).isDisplayed();
     }
 
-    public boolean statusOrderSamokat() {
+    public boolean statusOrderSamokat(String numberOrder) {
         clickButtonStatus();
-        setInputNumberOrder();
+        setInputNumberOrder(numberOrder);
         clickButtonGo();
         return getStatusOrder();
     }

@@ -9,12 +9,12 @@ import page.AccordionPage;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CheckAccardionTest extends Annotation {
+public class CheckTextAccordionTest extends Annotation {
     private final int numberAccordion;
     private final String textAccordionQuestion;
     private final String textAccordionAnswer;
 
-    public CheckAccardionTest(int numberAccordion, String textAccordionQuestion, String textAccordionAnswer) {
+    public CheckTextAccordionTest(int numberAccordion, String textAccordionQuestion, String textAccordionAnswer) {
         this.numberAccordion = numberAccordion;
         this.textAccordionQuestion = textAccordionQuestion;
         this.textAccordionAnswer = textAccordionAnswer;
@@ -35,15 +35,15 @@ public class CheckAccardionTest extends Annotation {
     }
 
     @Test
-    public void checkTextMatchingQuestion() {
-        AccordionPage textQuestion = new AccordionPage();
-        assertEquals("Текст заголовка вопроса некорректный", textAccordionQuestion, textQuestion.getListQuestionsAccordions(numberAccordion));
+    public void checkHeader() {
+        AccordionPage accordionPage = new AccordionPage();
+        assertEquals("Текст заголовка вопроса некорректный", textAccordionQuestion, accordionPage.checkElementAccordion(numberAccordion));
     }
 
     @Test
-    public void checkTextMatchingAnswer() {
-        AccordionPage textAnswer = new AccordionPage();
-        assertEquals("Текст ответа на вопрос некорректный", textAccordionAnswer, textAnswer.getTextAfterClickButton(numberAccordion));
+    public void checkParagraf() {
+        AccordionPage accordionPage = new AccordionPage();
+        assertEquals("Текст ответа на вопрос некорректный", textAccordionAnswer, accordionPage.getTextAfterClickButton(numberAccordion));
     }
 }
 

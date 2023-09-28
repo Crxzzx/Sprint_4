@@ -7,6 +7,9 @@ import org.junit.runners.Parameterized;
 import page.OrderStep1Page;
 import page.OrderStep2Page;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 @RunWith(Parameterized.class)
 public class OrderSamokatTest extends Annotation {
     private final int buttonOrder;
@@ -44,10 +47,11 @@ public class OrderSamokatTest extends Annotation {
 
     @Test
     public void fillingFormOrder() {
-        OrderStep1Page test1 = new OrderStep1Page();
-        test1.createOrderSamokatStep1(buttonOrder, nameForm, lastNameForm, adressForm, stationMetroForm, phoneNumberForm);
-        OrderStep2Page test2 = new OrderStep2Page();
-        test2.orderSamokat2step(dateCalendar, rentalPeriod, colorSamokat, commentCourier);
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.createOrderSamokatStep1(buttonOrder, nameForm, lastNameForm, adressForm, stationMetroForm, phoneNumberForm);
+        OrderStep2Page orderStep2Page = new OrderStep2Page();
+        orderStep2Page.orderSamokat2step(dateCalendar, rentalPeriod, colorSamokat, commentCourier);
+        assertEquals("Модально окно,об успешном создании заказа не отобразилось" , 1 ,orderStep2Page.getStatusOrder());
     }
 }
 

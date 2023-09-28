@@ -2,7 +2,7 @@ package test;
 
 import core.Annotation;
 import org.junit.Test;
-import page.ErrorTextOrderPage;
+import page.OrderStep1Page;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,36 +10,36 @@ import static org.junit.Assert.assertEquals;
 public class NegativeOrderSamokatTest extends Annotation {
     @Test
     public void comparisonErrorTextFirstName() {
-        ErrorTextOrderPage errorName = new ErrorTextOrderPage();
-        errorName.openFormOrder();
-        assertEquals("Некорректная подсказка об ошибке", "Введите корректное имя", errorName.getErrorTextName());
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.openFormOrder();
+        assertEquals("Некорректная подсказка об ошибке", "Введите корректное имя", orderStep1Page.getErrorTextName());
     }
 
     @Test
     public void comparisonErrorTextLastName() {
-        ErrorTextOrderPage errorLastName = new ErrorTextOrderPage();
-        errorLastName.openFormOrder();
-        assertEquals("Некорректная подсказка об ошибке", "Введите корректную фамилию", errorLastName.getErrorTextLastName());
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.openFormOrder();
+        assertEquals("Некорректная подсказка об ошибке", "Введите корректную фамилию", orderStep1Page.getErrorTextLastName());
     }
 
     @Test
     public void comparisonErrorTextAddress() {
-        ErrorTextOrderPage errorAddress = new ErrorTextOrderPage();
-        errorAddress.openFormOrder();
-        assertEquals("Некорректная подсказка об ошибке", "Введите корректный адрес", errorAddress.getErrorAddress());
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.openFormOrder();
+        assertEquals("Некорректная подсказка об ошибке", "Введите корректный адрес", orderStep1Page.getErrorAddress("d"));
     }
 
     @Test
     public void comparisonErrorTextStationMetro() {
-        ErrorTextOrderPage errorStation = new ErrorTextOrderPage();
-        errorStation.openFormOrder();
-        assertEquals("Некорректная подсказка об ошибке", "Выберите станцию", errorStation.getErrorStationMetro());
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.openFormOrder();
+        assertEquals("Некорректная подсказка об ошибке", "Выберите станцию", orderStep1Page.getErrorStationMetro());
     }
 
     @Test
     public void comparisonErrorTextPhoneNumber() {
-        ErrorTextOrderPage errorNumberPhone = new ErrorTextOrderPage();
-        errorNumberPhone.openFormOrder();
-        assertEquals("Некорректная подсказка об ошибке", "Введите корректный номер", errorNumberPhone.getErrorPhoneNumber());
+        OrderStep1Page orderStep1Page = new OrderStep1Page();
+        orderStep1Page.openFormOrder();
+        assertEquals("Некорректная подсказка об ошибке", "Введите корректный номер", orderStep1Page.getErrorPhoneNumber());
     }
 }
