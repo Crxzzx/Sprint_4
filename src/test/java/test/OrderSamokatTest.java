@@ -51,7 +51,7 @@ public class OrderSamokatTest extends Annotation {
         orderStep1Page.createOrderSamokatStep1(buttonOrder, nameForm, lastNameForm, adressForm, stationMetroForm, phoneNumberForm);
         OrderStep2Page orderStep2Page = new OrderStep2Page();
         orderStep2Page.orderSamokat2step(dateCalendar, rentalPeriod, colorSamokat, commentCourier);
-        assertEquals("Модально окно,об успешном создании заказа не отобразилось" , 1 ,orderStep2Page.getStatusOrder());
+        assertEquals("Модальное окно,об успешном создании заказа не отобразилось" , 1 ,orderStep2Page.getStatusOrder());
     }
 }
 
