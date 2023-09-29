@@ -22,7 +22,7 @@ public class OrderStep2Page extends Driver {
     private final By buttonOrderRental = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text () = 'Заказать']");
     //Кнопка "Да" в открывшемся модальном окне ,после нажатия на кнопку "Заказать" во втором шаге бронирования
     private final By buttonEndingOrder = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text() = 'Да']");
-    private final By statusOrder = By.xpath(".//div[contains(@class , 'Order_ModalHeader') and (text() = 'Заказ оформлен')]");
+    private final By statusOrder = By.xpath(".//div[contains(@class , 'Order_Modal') and (text() = 'Заказ оформлен')]");
 
     public void setDateDelivery(int date) {
         LocalDate actualDay = LocalDate.now();
@@ -58,8 +58,11 @@ public class OrderStep2Page extends Driver {
                 .until(ExpectedConditions.visibilityOfElementLocated(buttonEndingOrder));
         driver.findElement(buttonEndingOrder).click();
     }
-    public int getStatusOrder(){
-        return driver.findElements(statusOrder).size();
+
+    public String getStatusOrder() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(statusOrder));
+        return driver.findElement(statusOrder).getText();
     }
 
     public void orderSamokat2step(int date, String rental, String color, String commentToCourier) {

@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 import page.OrderStep1Page;
 import page.OrderStep2Page;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
@@ -40,8 +39,8 @@ public class OrderSamokatTest extends Annotation {
     @Parameterized.Parameters
     public static Object[][] getCredentials() {
         return new Object[][]{
-                {1, "Костян", "Скелетонов", "ул.Пушкина д. 10", 5, "89278813987", 3, "сутки", "grey", "Подгоните плизз заряженный"},
-                {2, "Лёха", "Рыбаловов", "ул.Великий Рыбак д. 5", 4, "89278813922", 2, "двое суток", "black", "Карась оказался не свежий,буду заказывать на yandex.market"},
+                {1, "Костян", "Скелетонов", "ул.Пушкина д. 10", 5, "89278813987", 1, "сутки", "grey", "Подгоните плизз заряженный"},
+                {2, "Лёха", "Рыбаловов", "ул.Великий Рыбак д. 5", 4, "89278813922", 1, "двое суток", "black", "Карась оказался не свежий,буду заказывать на yandex.market"},
         };
     }
 
@@ -51,7 +50,7 @@ public class OrderSamokatTest extends Annotation {
         orderStep1Page.createOrderSamokatStep1(buttonOrder, nameForm, lastNameForm, adressForm, stationMetroForm, phoneNumberForm);
         OrderStep2Page orderStep2Page = new OrderStep2Page();
         orderStep2Page.orderSamokat2step(dateCalendar, rentalPeriod, colorSamokat, commentCourier);
-        assertEquals("Модальное окно,об успешном создании заказа не отобразилось" , 1 ,orderStep2Page.getStatusOrder());
+        assertTrue("Модальное окно,об успешном создании заказа не отобразилось", orderStep2Page.getStatusOrder().contains("Заказ оформлен"));
     }
 }
 
