@@ -7,6 +7,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import page.OrderStep1Page;
 
 public abstract class Annotation extends Driver {
+    /**
+     * Запуск тестов на Firefox
+     */
     @Before
     public void settings() {
         FirefoxOptions options = new FirefoxOptions();
@@ -15,6 +18,9 @@ public abstract class Annotation extends Driver {
         driver.get("https://qa-scooter.praktikum-services.ru/");
         OrderStep1Page closeCookie = new OrderStep1Page();
         closeCookie.clickOnButtonCookie();
+        /**
+         * Запуск тестов на Chrome
+         */
         //ChromeOptions options = new ChromeOptions();
         //options.addArguments("--no-sandbox","--disable-dev-shm-usage");
         //driver = new ChromeDriver(options);

@@ -1,12 +1,14 @@
 package test;
 
 import core.Annotation;
+import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import page.OrderStep1Page;
 import page.OrderStep2Page;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
@@ -50,7 +52,7 @@ public class OrderSamokatTest extends Annotation {
         orderStep1Page.createOrderSamokatStep1(buttonOrder, nameForm, lastNameForm, adressForm, stationMetroForm, phoneNumberForm);
         OrderStep2Page orderStep2Page = new OrderStep2Page();
         orderStep2Page.orderSamokat2step(dateCalendar, rentalPeriod, colorSamokat, commentCourier);
-        assertTrue("Модальное окно,об успешном создании заказа не отобразилось", orderStep2Page.getStatusOrder().contains("Заказ оформлен"));
+        MatcherAssert.assertThat("Модальное окно,об успешном создании заказа не отобразилось" , orderStep2Page.getStatusOrder() , containsString("Заказ оформлен"));
     }
 }
 

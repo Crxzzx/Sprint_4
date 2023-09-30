@@ -22,7 +22,7 @@ public class OrderStep2Page extends Driver {
     private final By buttonOrderRental = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text () = 'Заказать']");
     //Кнопка "Да" в открывшемся модальном окне ,после нажатия на кнопку "Заказать" во втором шаге бронирования
     private final By buttonEndingOrder = By.xpath(".//div[contains(@class , 'Order_Buttons')]/button[text() = 'Да']");
-    private final By statusOrder = By.xpath(".//div[contains(@class , 'Order_Modal') and (text() = 'Заказ оформлен')]");
+    private final By statusOrder = By.xpath(".//div[starts-with(@class, 'Order_Modal')]//div[(starts-with(@class,'Order_ModalHeader'))]");
 
     public void setDateDelivery(int date) {
         LocalDate actualDay = LocalDate.now();
